@@ -94,6 +94,7 @@ export default {
       let dObj = this.useUtc
         ? new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1))
         : new Date(d.getFullYear(), d.getMonth(), 1, d.getHours(), d.getMinutes())
+      let todayObj = this.today : this.today ? new Date()
       let daysInMonth = this.utils.daysInMonth(this.utils.getFullYear(dObj), this.utils.getMonth(dObj))
       for (let i = 0; i < daysInMonth; i++) {
         days.push({
@@ -104,7 +105,7 @@ export default {
           isHighlighted: this.isHighlightedDate(dObj),
           isHighlightStart: this.isHighlightStart(dObj),
           isHighlightEnd: this.isHighlightEnd(dObj),
-          isToday: this.utils.compareDates(dObj, this.today : this.today ? new Date() ),
+          isToday: this.utils.compareDates(dObj, todayObj),
           isWeekend: this.utils.getDay(dObj) === 0 || this.utils.getDay(dObj) === 6,
           isSaturday: this.utils.getDay(dObj) === 6,
           isSunday: this.utils.getDay(dObj) === 0
