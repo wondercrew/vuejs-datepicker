@@ -47,7 +47,8 @@ export default {
     translation: Object,
     isRtl: Boolean,
     mondayFirst: Boolean,
-    useUtc: Boolean
+    useUtc: Boolean,
+    today: Date
   },
   data () {
     const constructedDateUtils = makeDateUtils(this.useUtc)
@@ -103,7 +104,7 @@ export default {
           isHighlighted: this.isHighlightedDate(dObj),
           isHighlightStart: this.isHighlightStart(dObj),
           isHighlightEnd: this.isHighlightEnd(dObj),
-          isToday: this.utils.compareDates(dObj, new Date()),
+          isToday: this.utils.compareDates(dObj, this.today : this.today ? new Date() ),
           isWeekend: this.utils.getDay(dObj) === 0 || this.utils.getDay(dObj) === 6,
           isSaturday: this.utils.getDay(dObj) === 6,
           isSunday: this.utils.getDay(dObj) === 0
