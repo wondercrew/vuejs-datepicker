@@ -48,6 +48,7 @@
       :mondayFirst="mondayFirst"
       :dayCellContent="dayCellContent"
       :use-utc="useUtc"
+      :today="today"
       @changedMonth="handleChangedMonthFromDayPicker"
       @selectDate="selectDate"
       @showMonthCalendar="showMonthCalendar"
@@ -150,6 +151,7 @@ export default {
     required: Boolean,
     typeable: Boolean,
     useUtc: Boolean,
+    today: Date,
     minimumView: {
       type: String,
       default: 'day'
